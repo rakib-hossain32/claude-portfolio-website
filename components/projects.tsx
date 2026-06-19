@@ -11,32 +11,32 @@ const accentMap: Record<
   { text: string; ring: string; glow: string; dot: string; chip: string }
 > = {
   teal: {
-    text: "text-[#2dd4bf]",
-    ring: "group-hover:border-[#2dd4bf]/40",
-    glow: "rgba(45,212,191,0.16)",
-    dot: "bg-[#2dd4bf]",
-    chip: "group-hover:text-[#2dd4bf]",
-  },
-  emerald: {
-    text: "text-[#34d399]",
-    ring: "group-hover:border-[#34d399]/40",
-    glow: "rgba(52,211,153,0.16)",
-    dot: "bg-[#34d399]",
-    chip: "group-hover:text-[#34d399]",
-  },
-  cyan: {
-    text: "text-[#22d3ee]",
-    ring: "group-hover:border-[#22d3ee]/40",
-    glow: "rgba(34,211,238,0.16)",
-    dot: "bg-[#22d3ee]",
-    chip: "group-hover:text-[#22d3ee]",
-  },
-  lime: {
-    text: "text-[#a3e635]",
+    text: "text-[#4d7c0f]",
     ring: "group-hover:border-[#a3e635]/40",
     glow: "rgba(163,230,53,0.15)",
     dot: "bg-[#a3e635]",
-    chip: "group-hover:text-[#a3e635]",
+    chip: "group-hover:text-[#4d7c0f]",
+  },
+  emerald: {
+    text: "text-[#4d7c0f]",
+    ring: "group-hover:border-[#a3e635]/40",
+    glow: "rgba(163,230,53,0.15)",
+    dot: "bg-[#a3e635]",
+    chip: "group-hover:text-[#4d7c0f]",
+  },
+  cyan: {
+    text: "text-[#4d7c0f]",
+    ring: "group-hover:border-[#a3e635]/40",
+    glow: "rgba(163,230,53,0.15)",
+    dot: "bg-[#a3e635]",
+    chip: "group-hover:text-[#4d7c0f]",
+  },
+  lime: {
+    text: "text-[#4d7c0f]",
+    ring: "group-hover:border-[#a3e635]/40",
+    glow: "rgba(163,230,53,0.15)",
+    dot: "bg-[#a3e635]",
+    chip: "group-hover:text-[#4d7c0f]",
   },
 };
 

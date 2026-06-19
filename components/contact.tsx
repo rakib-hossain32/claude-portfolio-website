@@ -30,8 +30,8 @@ export function Contact({
       <div className="container-px mx-auto w-full max-w-6xl">
         <Reveal>
           <div className="relative overflow-hidden rounded-[2rem] border border-border bg-gradient-to-br from-surface/70 via-surface/40 to-bg p-8 md:p-16">
-            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(45,212,191,0.14),transparent)] blur-2xl" />
-            <div className="pointer-events-none absolute -bottom-24 -left-10 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(52,211,153,0.10),transparent)] blur-2xl" />
+            <div className="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(163,230,53,0.18),transparent)] blur-2xl" />
+            <div className="pointer-events-none absolute -bottom-24 -left-10 h-64 w-64 rounded-full bg-[radial-gradient(closest-side,rgba(163,230,53,0.12),transparent)] blur-2xl" />
 
             <div className="relative max-w-2xl">
               <div className="flex items-center gap-3">
@@ -51,7 +51,7 @@ export function Contact({
               <div className="mt-9 flex flex-wrap items-center gap-3">
                 <a
                   href={`mailto:${contact.email}`}
-                  className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-bg shadow-glow transition-transform hover:-translate-y-0.5"
+                  className="group inline-flex items-center gap-2 rounded-full bg-lime px-6 py-3 text-sm font-semibold text-ink shadow-glow transition-transform hover:-translate-y-0.5"
                 >
                   <MailIcon className="h-4 w-4" />
                   {contact.email}

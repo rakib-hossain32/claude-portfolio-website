@@ -30,9 +30,9 @@ export function Hero({ person }: { person: SiteContent["person"] }) {
           initial={reduce ? false : { opacity: 0, scale: 0.85 }}
           animate={reduce ? undefined : { opacity: 1, scale: 1 }}
           transition={{ duration: 1.6, ease: "easeOut" }}
-          className="absolute -top-40 left-1/2 h-[34rem] w-[60rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(45,212,191,0.16),transparent)] blur-2xl"
+          className="absolute -top-40 left-1/2 h-[34rem] w-[60rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(163,230,53,0.22),transparent)] blur-2xl"
         />
-        <div className="absolute -right-20 top-1/3 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(52,211,153,0.10),transparent)] blur-2xl" />
+        <div className="absolute -right-20 top-1/3 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(163,230,53,0.14),transparent)] blur-2xl" />
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
       </div>
 
@@ -68,7 +68,7 @@ export function Hero({ person }: { person: SiteContent["person"] }) {
           <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-3">
             <a
               href="#work"
-              className="group inline-flex items-center gap-2 rounded-full bg-accent px-6 py-3 text-sm font-semibold text-bg shadow-glow transition-transform hover:-translate-y-0.5"
+              className="group inline-flex items-center gap-2 rounded-full bg-lime px-6 py-3 text-sm font-semibold text-ink shadow-glow transition-transform hover:-translate-y-0.5"
             >
               View my work
               <ArrowDown className="h-4 w-4 transition-transform group-hover:translate-y-0.5" />

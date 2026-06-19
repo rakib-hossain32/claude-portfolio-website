@@ -59,7 +59,9 @@ export function Navbar({ name }: { name: string }) {
     <header
       className={clsx(
         "fixed inset-x-0 top-0 z-50 transition-all duration-500",
-        scrolled
+        open
+          ? "border-b border-border bg-bg shadow-[0_1px_0_rgba(77,124,15,0.08)]"
+          : scrolled
           ? "border-b border-border/70 bg-bg/70 backdrop-blur-xl"
           : "border-b border-transparent bg-transparent"
       )}
@@ -119,7 +121,7 @@ export function Navbar({ name }: { name: string }) {
 
         <button
           onClick={() => setOpen((v) => !v)}
-          className="relative z-50 grid h-10 w-10 place-items-center rounded-lg border border-border bg-surface/60 md:hidden"
+          className="relative z-50 grid h-10 w-10 place-items-center rounded-lg border border-border bg-surface md:hidden"
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
@@ -153,7 +155,7 @@ export function Navbar({ name }: { name: string }) {
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
             transition={{ duration: 0.25 }}
-            className="fixed inset-0 top-16 z-40 bg-bg/95 backdrop-blur-xl md:hidden"
+            className="fixed inset-x-0 bottom-0 top-16 z-40 bg-bg md:hidden"
           >
             <ul className="container-px flex flex-col gap-1 pt-6">
               {links.map((link, i) => (

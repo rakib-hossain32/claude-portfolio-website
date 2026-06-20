@@ -27,7 +27,7 @@ export function About({
             {about.highlights.map((h) => (
               <StaggerItem
                 key={h}
-                className="min-w-[150px] flex-1 rounded-2xl border border-border bg-surface/40 p-4 transition-colors hover:border-accent/30"
+                className="min-w-37.5 flex-1 rounded-2xl border border-border bg-surface/40 p-4 transition-colors hover:border-accent/30"
               >
                 <p className="text-sm font-medium leading-snug text-ink/90">{h}</p>
               </StaggerItem>
@@ -35,7 +35,7 @@ export function About({
           </Stagger>
 
           <Reveal delay={0.2}>
-            <div className="mt-3 rounded-2xl border border-border bg-gradient-to-br from-surface/60 to-surface-2/30 p-5">
+            <div className="mt-3 rounded-2xl border border-border bg-linear-to-br from-surface/60 to-surface-2/30 p-5">
               <p className="font-mono text-xs uppercase tracking-[0.2em] text-faint">
                 Currently
               </p>

@@ -10,13 +10,13 @@ export function Experience({ experience }: { experience: SiteContent["experience
       title="Where I've worked"
     >
       <div className="relative">
-        <div className="absolute bottom-2 left-[7px] top-2 w-px bg-gradient-to-b from-accent/40 via-border to-transparent md:left-[9px]" />
+        <div className="absolute bottom-2 left-1.75 top-2 w-px bg-linear-to-b from-accent/40 via-border to-transparent md:left-2.25" />
 
         <div className="space-y-10">
           {experience.map((job, i) => (
             <Reveal key={`${job.company}-${i}`} delay={i * 0.06}>
               <div className="relative pl-9 md:pl-12">
-                <span className="absolute left-0 top-1.5 grid h-[18px] w-[18px] place-items-center rounded-full border border-border bg-surface">
+                <span className="absolute left-0 top-1.5 grid h-4.5 w-4.5 place-items-center rounded-full border border-border bg-surface">
                   <span className="h-1.5 w-1.5 rounded-full bg-accent" />
                 </span>
 

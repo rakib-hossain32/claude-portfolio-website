@@ -35,7 +35,7 @@ export function Skills({ skills }: { skills: SiteContent["skills"] }) {
       </Stagger>
 
       {/* subtle marquee strip */}
-      <div className="relative mt-10 overflow-hidden rounded-2xl border border-border-soft bg-surface/20 py-4 [mask-image:linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
+      <div className="relative mt-10 overflow-hidden rounded-2xl border border-border-soft bg-surface/20 py-4 mask-[linear-gradient(to_right,transparent,#000_8%,#000_92%,transparent)]">
         <div className="flex w-max animate-marquee gap-8 pr-8">
           {[...marquee, ...marquee].map((tech, i) => (
             <span

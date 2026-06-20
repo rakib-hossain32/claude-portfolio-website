@@ -30,20 +30,20 @@ export function Hero({ person }: { person: SiteContent["person"] }) {
           initial={reduce ? false : { opacity: 0, scale: 0.85 }}
           animate={reduce ? undefined : { opacity: 1, scale: 1 }}
           transition={{ duration: 1.6, ease: "easeOut" }}
-          className="absolute -top-40 left-1/2 h-[34rem] w-[60rem] -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(163,230,53,0.22),transparent)] blur-2xl"
+          className="absolute -top-40 left-1/2 h-136 w-240 -translate-x-1/2 rounded-full bg-[radial-gradient(closest-side,rgba(163,230,53,0.22),transparent)] blur-2xl"
         />
         <div className="absolute -right-20 top-1/3 h-72 w-72 rounded-full bg-[radial-gradient(closest-side,rgba(163,230,53,0.14),transparent)] blur-2xl" />
-        <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-border to-transparent" />
+        <div className="absolute bottom-0 left-0 right-0 h-px bg-linear-to-r from-transparent via-border to-transparent" />
       </div>
 
-      <div className="container-px mx-auto w-full max-w-6xl">
+      <div className="container-px mx-auto w-full max-w-6xl flex flex-col items-center justify-center text-center">
         <motion.div
           variants={container}
           initial="hidden"
           animate="show"
-          className="max-w-3xl"
+          className="flex max-w-3xl flex-col items-center"
         >
-          <motion.div variants={item} className="mb-7 inline-flex items-center gap-2.5 rounded-full border border-border bg-surface/50 py-1.5 pl-2 pr-4 text-sm text-muted backdrop-blur">
+          <motion.div variants={item} className="mb-7 inline-flex items-center justify-center gap-2.5 rounded-full border border-border bg-surface/50 py-1.5 pl-2 pr-4 text-sm text-muted backdrop-blur">
             <span className="relative flex h-2 w-2">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-2 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-2" />
@@ -53,7 +53,7 @@ export function Hero({ person }: { person: SiteContent["person"] }) {
 
           <motion.h1
             variants={item}
-            className="text-balance text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-6xl md:text-7xl"
+            className=" text-4xl font-semibold leading-[1.05] tracking-tight text-ink sm:text-6xl md:text-7xl"
           >
             {person.heroHeadline}
           </motion.h1>
@@ -65,7 +65,7 @@ export function Hero({ person }: { person: SiteContent["person"] }) {
             {person.tagline}
           </motion.p>
 
-          <motion.div variants={item} className="mt-10 flex flex-wrap items-center gap-3">
+          <motion.div variants={item} className="mt-10 flex flex-wrap justify-center items-center gap-3">
             <a
               href="#work"
               className="group inline-flex items-center gap-2 rounded-full bg-lime px-6 py-3 text-sm font-semibold text-ink shadow-glow transition-transform hover:-translate-y-0.5"

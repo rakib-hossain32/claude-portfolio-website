@@ -58,7 +58,8 @@ export function Navbar({ name }: { name: string }) {
   return (
     <header
       className={clsx(
-        "fixed inset-x-0 top-0 z-50 transition-all duration-500",
+        "fixed inset-x-0 top-0 z-50 transition-colors",
+        open ? "duration-100" : "duration-500",
         open
           ? "border-b border-border bg-bg shadow-[0_1px_0_rgba(77,124,15,0.08)]"
           : scrolled
@@ -66,7 +67,7 @@ export function Navbar({ name }: { name: string }) {
           : "border-b border-transparent bg-transparent"
       )}
     >
-      <nav className="container-px mx-auto flex h-16 max-w-6xl items-center justify-between md:h-[4.5rem]">
+      <nav className="container-px mx-auto flex h-16 max-w-6xl items-center justify-between md:h-18">
         <a
           href="#"
           className="group flex items-center gap-2.5"
@@ -125,11 +126,11 @@ export function Navbar({ name }: { name: string }) {
           aria-label={open ? "Close menu" : "Open menu"}
           aria-expanded={open}
         >
-          <div className="flex w-5 flex-col gap-[5px]">
+          <div className="flex w-5 flex-col gap-1.25">
             <span
               className={clsx(
                 "h-px w-full bg-ink transition-all duration-300",
-                open && "translate-y-[6px] rotate-45"
+                open && "translate-y-1.5 rotate-45"
               )}
             />
             <span
@@ -141,7 +142,7 @@ export function Navbar({ name }: { name: string }) {
             <span
               className={clsx(
                 "h-px w-full bg-ink transition-all duration-300",
-                open && "-translate-y-[6px] -rotate-45"
+                open && "-translate-y-1.5 -rotate-45"
               )}
             />
           </div>

@@ -119,26 +119,21 @@ export function Projects({ projects }: { projects: SiteContent["projects"] }) {
       intro="A selection of projects I have designed, built, and shipped — from initial architecture to production deployment."
     >
       {/* ── Mobile: swipeable horizontal carousel ── */}
-      <div className="md:hidden">
+      <div className="md:hidden -mx-6">
         <div
           ref={scrollRef}
           onScroll={handleScroll}
-          className="flex gap-4 overflow-x-auto pb-4 scrollbar-none [&::-webkit-scrollbar]:hidden"
-          style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
+          className="flex gap-4 overflow-x-auto px-6 pb-6 snap-x snap-mandatory scrollbar-none [&::-webkit-scrollbar]:hidden"
+          style={{ WebkitOverflowScrolling: "touch" }}
         >
-          {/* leading spacer so first card aligns with page padding */}
-          <div className="w-1 shrink-0" />
           {projects.map((project, i) => (
             <div
               key={project.name}
-              className="w-[82vw] shrink-0 sm:w-[72vw]"
-              style={{ scrollSnapAlign: "center" }}
+              className="w-[85vw] shrink-0 snap-center snap-always sm:w-[70vw]"
             >
               <ProjectCard project={project} index={i} />
             </div>
           ))}
-          {/* trailing spacer */}
-          <div className="w-1 shrink-0" />
         </div>
 
         {/* Dot indicators */}

@@ -9,7 +9,7 @@ export function Footer({ person }: { person: SiteContent["person"] }) {
         <div className="text-center sm:text-left">
           <p className="text-sm font-medium text-ink/90">{person.name}</p>
           <p className="mt-1 text-xs text-faint">
-            © {year} · Built with Next.js & Tailwind CSS
+            © {year} All rights reserved.
           </p>
         </div>
 
@@ -21,7 +21,7 @@ export function Footer({ person }: { person: SiteContent["person"] }) {
             aria-label="GitHub"
             className="grid h-10 w-10 place-items-center rounded-full border border-border bg-surface/40 text-muted transition-colors hover:border-accent/40 hover:text-accent"
           >
-            <GithubIcon className="h-[18px] w-[18px]" />
+            <GithubIcon className="h-4.5 w-4.5" />
           </a>
           <a
             href={person.socials.linkedin}
@@ -30,14 +30,14 @@ export function Footer({ person }: { person: SiteContent["person"] }) {
             aria-label="LinkedIn"
             className="grid h-10 w-10 place-items-center rounded-full border border-border bg-surface/40 text-muted transition-colors hover:border-accent/40 hover:text-accent"
           >
-            <LinkedinIcon className="h-[18px] w-[18px]" />
+            <LinkedinIcon className="h-4.5 w-4.5" />
           </a>
           <a
             href={`mailto:${person.email}`}
             aria-label="Email"
             className="grid h-10 w-10 place-items-center rounded-full border border-border bg-surface/40 text-muted transition-colors hover:border-accent/40 hover:text-accent"
           >
-            <MailIcon className="h-[18px] w-[18px]" />
+            <MailIcon className="h-4.5 w-4.5" />
           </a>
         </div>
       </div>

@@ -6,26 +6,26 @@ export const content: SiteContent = {
   person: {
     name: "Rakib Hossain",
     role: "Full-Stack Developer",
-    location: "Dhaka, Bangladesh",
-    heroHeadline: "I build the boring parts that hold up.",
+    location: "",
+    heroHeadline: "Building scalable and robust web applications.",
     tagline:
-      "Full-stack developer working mostly in Next.js and TypeScript. Most of my time goes into the data layer and whatever falls over when traffic actually shows up.",
+      "Full-stack developer with professional experience building modern web applications using React,Next.js, Node.js, PostgreSQL, MongoDB, Express.js and more.",
     available: true,
-    email: "hello@rakibhossain.dev",
+    email: "rakibulhasanmd678@gmail.com",
     socials: {
-      github: "https://github.com/rakibhossain",
-      linkedin: "https://linkedin.com/in/rakibhossain",
+      github: "https://github.com/rakib-hossain32",
+      linkedin: "https://linkedin.com/in/rakib-hossain-md",
     },
   },
 
   about: {
     paragraphs: [
-      "I got into this by accident. I was running a tiny inventory spreadsheet for a friend's shop and it kept falling apart every time two people edited it at once. So I built a small web app to replace it, broke it a few more times, and somewhere in there I figured out I'd rather do that than the job I had. That was 2022. Since then it's been production web apps full time, mostly Next.js and TypeScript up front with Node and Postgres underneath.",
-      "Most of my work sits closer to the backend. I like getting the database schema right, watching query plans, and figuring out why a request that should take 30ms is taking 600. I use Prisma day to day, but I'm comfortable dropping into raw SQL when the query builder gets in the way, which happens more than I'd like. Redis comes up a lot too. Sometimes for caching, sometimes just to stop hammering Postgres with the same lookup.",
-      "I keep a Postgres explain-analyze output open in a tab way too often. It's a habit. My one real pet peeve is a 500 with no log line attached, so I've gotten stubborn about logging. I'd rather ship something boring that survives a traffic spike than something clever I have to babysit. I've been on the wrong end of the clever version enough times. I write tests with Vitest and Playwright, deploy on Vercel and AWS depending on the project, and I'm happy doing the Docker and CI plumbing nobody else volunteers for.",
+      "I am a Full-Stack Developer with hands-on professional experience building modern, production-ready web applications. I work across the entire stack — from designing responsive React UIs to building robust REST APIs with Node.js and Express, backed by both SQL and NoSQL databases.",
+      "My backend experience includes working with PostgreSQL via Prisma, as well as MongoDB with Mongoose. I am comfortable designing schemas, writing efficient queries, and structuring APIs that are clean and maintainable.",
+      "I am actively looking for opportunities where I can grow as an engineer, take on greater responsibility, and contribute to a team building meaningful products."
     ],
     highlights: [
-      "~3 yrs building production web apps",
+      "4 months professional experience",
       "Next.js / TypeScript / Node / Postgres",
       "Open to full-stack & backend roles",
     ],
@@ -34,19 +34,19 @@ export const content: SiteContent = {
   skills: [
     {
       group: "Frontend",
-      items: ["Next.js", "React", "TypeScript", "Tailwind CSS", "React Query"],
+      items: ["React", "Next.js", "JavaScript", "TypeScript", "Redux", "React Query", "Tailwind CSS", "HTML & CSS", "Framer Motion"],
     },
     {
       group: "Backend",
-      items: ["Node.js", "tRPC", "REST APIs", "PostgreSQL", "Prisma", "Redis"],
+      items: ["Node.js", "Express.js", "REST APIs", "GraphQL", "tRPC", "Prisma", "JWT", "WebSockets"],
     },
     {
-      group: "Infra & Deploy",
-      items: ["Docker", "AWS", "Vercel", "GitHub Actions"],
+      group: "Databases",
+      items: ["PostgreSQL", "MongoDB", "Mongoose", "Redis", "MySQL"],
     },
     {
-      group: "Testing",
-      items: ["Vitest", "Playwright", "Testing Library"],
+      group: "Tools & Deploy",
+      items: ["Git", "GitHub", "Vercel", "AWS", "Docker", "Postman", "GitHub Actions", "Linux"],
     },
   ],
 
@@ -115,29 +115,16 @@ export const content: SiteContent = {
 
   experience: [
     {
-      role: "Full-Stack Developer",
-      company: "Freelance & contract",
-      period: "2024 — Present",
+      role: "MERN Stack Developer",
+      company: "Rise Together",
+      period: "2026-03-01 — Present",
       summary:
-        "Working with a few small product teams, usually owning a slice end to end from the Postgres schema up to the React it feeds.",
+        "Worked as a full-stack developer on a product team, building and maintaining features across the entire stack using the MERN technology set.",
       bullets: [
-        "Took over a slow Next.js app and cut p95 page response from 820ms to 140ms by fixing N+1 queries and adding Redis caching",
-        "Moved a client off a managed service to a Dockerized AWS setup and dropped their monthly bill by about 60%",
-        "Mentor one junior dev on SQL and migration hygiene, mostly catching the migrations that lock a table at the wrong time",
-        "Wrote the Stripe integration and the row-level locking that keeps single-unit inventory from overselling",
-      ],
-    },
-    {
-      role: "Web Developer",
-      company: "Orbit Labs",
-      period: "2022 — 2024",
-      summary:
-        "First real dev job. Joined when it was a prototype and was still there when people started actually paying for it.",
-      bullets: [
-        "Migrated the app from a single Express monolith to a Next.js frontend with a typed tRPC API",
-        "Moved the database off a hand-rolled query layer to Prisma, which cut a whole class of runtime SQL errors",
-        "Added Docker and a staging environment so we stopped testing in production",
-        "Built the first version of the background job system that later became Relay",
+        "Developed and maintained RESTful APIs with Express.js and Node.js, consumed by a Next.js frontend",
+        "Designed and managed MongoDB schemas and wrote optimized queries for core application features",
+        "Built reusable React components and integrated them with backend APIs to deliver complete user-facing features",
+        "Collaborated in a team environment using Git for version control and participated in code reviews",
       ],
     },
   ],
@@ -145,6 +132,6 @@ export const content: SiteContent = {
   contact: {
     headline: "Open to work",
     text: "I'm looking for full-stack or backend-leaning roles, the kind where I can own the data layer and the API. If you've got something gnarly in Postgres, or a Next.js app that's quietly gotten slow, that's the work I'd take. Email is the fastest way to reach me.",
-    email: "hello@rakibhossain.dev",
+    email: "rakibulhasanmd678@gamil.com",
   },
 };

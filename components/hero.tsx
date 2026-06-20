@@ -48,7 +48,8 @@ export function Hero({ person }: { person: SiteContent["person"] }) {
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-accent-2 opacity-75" />
               <span className="relative inline-flex h-2 w-2 rounded-full bg-accent-2" />
             </span>
-            {person.available ? "Open to new roles" : "Currently heads-down"} · {person.location}
+            {person.available ? "Open to new roles" : "Currently heads-down"}
+            {person.location ? ` · ${person.location}` : ""}
           </motion.div>
 
           <motion.h1
@@ -89,7 +90,7 @@ export function Hero({ person }: { person: SiteContent["person"] }) {
                 aria-label="GitHub"
                 className="grid h-11 w-11 place-items-center rounded-full border border-border bg-surface/40 text-muted transition-colors hover:border-accent/40 hover:text-accent"
               >
-                <GithubIcon className="h-[18px] w-[18px]" />
+                <GithubIcon className="h-4.5 w-4.5" />
               </a>
               <a
                 href={person.socials.linkedin}
@@ -98,7 +99,7 @@ export function Hero({ person }: { person: SiteContent["person"] }) {
                 aria-label="LinkedIn"
                 className="grid h-11 w-11 place-items-center rounded-full border border-border bg-surface/40 text-muted transition-colors hover:border-accent/40 hover:text-accent"
               >
-                <LinkedinIcon className="h-[18px] w-[18px]" />
+                <LinkedinIcon className="h-4.5 w-4.5" />
               </a>
             </div>
           </motion.div>

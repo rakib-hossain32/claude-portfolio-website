@@ -4,6 +4,7 @@ export interface Project {
   name: string;
   tagline: string;
   description: string;
+  image?: string;
   tech: string[];
   highlights: string[];
   links: { live?: string; github?: string };

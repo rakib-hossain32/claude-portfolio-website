@@ -1,164 +1,168 @@
 "use client";
 
-import { useRef, type MouseEvent } from "react";
-import { motion, useMotionTemplate, useMotionValue, useSpring } from "motion/react";
-import type { Accent, Project, SiteContent } from "@/lib/types";
+import { useRef, useState } from "react";
+import Image from "next/image";
+import { motion } from "motion/react";
+import type { Project, SiteContent } from "@/lib/types";
 import { Section } from "./section";
 import { ArrowUpRight, GithubIcon } from "./icons";
 
-const accentMap: Record<
-  Accent,
-  { text: string; ring: string; glow: string; dot: string; chip: string }
-> = {
-  teal: {
-    text: "text-[#4d7c0f]",
-    ring: "group-hover:border-[#a3e635]/40",
-    glow: "rgba(163,230,53,0.15)",
-    dot: "bg-[#a3e635]",
-    chip: "group-hover:text-[#4d7c0f]",
-  },
-  emerald: {
-    text: "text-[#4d7c0f]",
-    ring: "group-hover:border-[#a3e635]/40",
-    glow: "rgba(163,230,53,0.15)",
-    dot: "bg-[#a3e635]",
-    chip: "group-hover:text-[#4d7c0f]",
-  },
-  cyan: {
-    text: "text-[#4d7c0f]",
-    ring: "group-hover:border-[#a3e635]/40",
-    glow: "rgba(163,230,53,0.15)",
-    dot: "bg-[#a3e635]",
-    chip: "group-hover:text-[#4d7c0f]",
-  },
-  lime: {
-    text: "text-[#4d7c0f]",
-    ring: "group-hover:border-[#a3e635]/40",
-    glow: "rgba(163,230,53,0.15)",
-    dot: "bg-[#a3e635]",
-    chip: "group-hover:text-[#4d7c0f]",
-  },
-};
-
 function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const a = accentMap[project.accent];
-  const ref = useRef<HTMLElement>(null);
-
-  // pointer-tracked spotlight
-  const mx = useMotionValue(0);
-  const my = useMotionValue(0);
-  const rx = useSpring(useMotionValue(0), { stiffness: 150, damping: 18 });
-  const ry = useSpring(useMotionValue(0), { stiffness: 150, damping: 18 });
-  const spotlight = useMotionTemplate`radial-gradient(420px circle at ${mx}px ${my}px, ${a.glow}, transparent 70%)`;
-
-  function onMove(e: MouseEvent<HTMLElement>) {
-    const el = ref.current;
-    if (!el) return;
-    const rect = el.getBoundingClientRect();
-    const x = e.clientX - rect.left;
-    const y = e.clientY - rect.top;
-    mx.set(x);
-    my.set(y);
-    rx.set(((y - rect.height / 2) / rect.height) * -5);
-    ry.set(((x - rect.width / 2) / rect.width) * 5);
-  }
-
-  function onLeave() {
-    rx.set(0);
-    ry.set(0);
-  }
-
   return (
     <motion.article
-      ref={ref}
-      onMouseMove={onMove}
-      onMouseLeave={onLeave}
-      initial={{ opacity: 0, y: 26 }}
+      initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true, margin: "-60px" }}
-      transition={{ duration: 0.7, delay: (index % 2) * 0.08, ease: [0.16, 1, 0.3, 1] }}
-      style={{ rotateX: rx, rotateY: ry, transformPerspective: 1000 }}
-      className={`group relative flex flex-col overflow-hidden rounded-3xl border border-border bg-surface/40 p-7 transition-colors duration-300 md:p-8 ${a.ring}`}
+      viewport={{ once: true, margin: "-30px" }}
+      transition={{ duration: 0.5, delay: index * 0.06, ease: [0.16, 1, 0.3, 1] }}
+      className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface/40 transition-all duration-300 hover:border-accent/30 hover:shadow-[0_8px_32px_rgba(77,124,15,0.09)]"
     >
-      <motion.div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 opacity-0 transition-opacity duration-300 group-hover:opacity-100"
-        style={{ background: spotlight }}
-      />
+      {/* Image */}
+      <div className="relative aspect-video w-full overflow-hidden bg-surface-2">
+        {project.image ? (
+          <Image
+            src={project.image}
+            alt={project.name}
+            fill
+            className="object-cover transition-transform duration-500 group-hover:scale-[1.03]"
+            sizes="(max-width: 768px) 82vw, (max-width: 1024px) 50vw, 33vw"
+          />
+        ) : (
+          /* Placeholder when no image */
+          <div className="flex h-full w-full items-center justify-center bg-linear-to-br from-surface-2 to-surface">
+            <span className="font-mono text-2xl font-bold text-accent/20">
+              {project.name[0]}
+            </span>
+          </div>
+        )}
+        {/* Year badge */}
+        <span className="absolute right-3 top-3 rounded-md bg-bg/80 px-2 py-0.5 font-mono text-[11px] text-faint backdrop-blur-sm">
+          {project.year}
+        </span>
+      </div>
 
-      <div className="relative flex items-start justify-between gap-4">
-        <div className="flex items-center gap-2.5">
-          <span className={`h-2 w-2 rounded-full ${a.dot}`} />
-          <h3 className="text-xl font-semibold tracking-tight text-ink md:text-2xl">
-            {project.name}
-          </h3>
+      {/* Content */}
+      <div className="flex flex-1 flex-col p-5">
+        {/* Title & tagline */}
+        <div className="flex items-start gap-2">
+          <span className="mt-1.75 h-1.5 w-1.5 shrink-0 rounded-full bg-accent-2" />
+          <div>
+            <h3 className="text-base font-semibold tracking-tight text-ink">
+              {project.name}
+            </h3>
+            <p className="mt-0.5 text-xs font-medium text-accent">{project.tagline}</p>
+          </div>
         </div>
-        <span className="font-mono text-xs text-faint">{project.year}</span>
-      </div>
 
-      <p className={`relative mt-1.5 text-sm font-medium ${a.text}`}>{project.tagline}</p>
+        {/* Description */}
+        <p className="mt-3 text-pretty text-sm leading-relaxed text-muted">
+          {project.description}
+        </p>
 
-      <p className="relative mt-4 text-pretty text-sm leading-relaxed text-muted">
-        {project.description}
-      </p>
+        {/* Tech chips */}
+        <div className="mt-4 flex flex-wrap gap-1.5">
+          {project.tech.map((t) => (
+            <span
+              key={t}
+              className="rounded-md border border-border-soft bg-bg px-2 py-0.5 font-mono text-[10px] text-faint"
+            >
+              {t}
+            </span>
+          ))}
+        </div>
 
-      <ul className="relative mt-5 space-y-2">
-        {project.highlights.map((h) => (
-          <li key={h} className="flex gap-2.5 text-sm text-ink/80">
-            <span className={`mt-1.5 h-1 w-1 shrink-0 rounded-full ${a.dot}`} />
-            <span className="leading-snug">{h}</span>
-          </li>
-        ))}
-      </ul>
-
-      <div className="relative mt-6 flex flex-wrap gap-1.5">
-        {project.tech.map((t) => (
-          <span
-            key={t}
-            className="rounded-md border border-border-soft bg-bg/40 px-2.5 py-1 font-mono text-[11px] text-faint"
-          >
-            {t}
-          </span>
-        ))}
-      </div>
-
-      <div className="relative mt-7 flex items-center gap-4 border-t border-border-soft pt-5">
-        {project.links.live && (
-          <a
-            href={project.links.live}
-            target="_blank"
-            rel="noreferrer"
-            className={`group/link inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors ${a.chip}`}
-          >
-            Live site
-            <ArrowUpRight className="h-3.5 w-3.5 transition-transform group-hover/link:-translate-y-0.5 group-hover/link:translate-x-0.5" />
-          </a>
-        )}
-        {project.links.github && (
-          <a
-            href={project.links.github}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-ink"
-          >
-            <GithubIcon className="h-4 w-4" />
-            Code
-          </a>
-        )}
+        {/* Links — pushed to bottom */}
+        <div className="flex items-center gap-5 border-t border-border-soft pt-4 mt-4">
+          {project.links.live && (
+            <a
+              href={project.links.live}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm font-medium text-ink transition-colors hover:text-accent"
+            >
+              Live site
+              <ArrowUpRight className="h-3.5 w-3.5" />
+            </a>
+          )}
+          {project.links.github && (
+            <a
+              href={project.links.github}
+              target="_blank"
+              rel="noreferrer"
+              className="inline-flex items-center gap-1.5 text-sm text-muted transition-colors hover:text-ink"
+            >
+              <GithubIcon className="h-4 w-4" />
+              Code
+            </a>
+          )}
+        </div>
       </div>
     </motion.article>
   );
 }
 
 export function Projects({ projects }: { projects: SiteContent["projects"] }) {
+  const scrollRef = useRef<HTMLDivElement>(null);
+  const [activeIndex, setActiveIndex] = useState(0);
+
+  function handleScroll() {
+    const el = scrollRef.current;
+    if (!el) return;
+    const cardWidth = el.scrollWidth / projects.length;
+    setActiveIndex(Math.round(el.scrollLeft / cardWidth));
+  }
+
   return (
     <Section
       id="work"
       label="Selected Work"
       title="Things I've built"
-      intro="A few projects I've shipped end to end, from schema to deploy. Numbers are real and measured, not rounded up."
+      intro="A selection of projects I have designed, built, and shipped — from initial architecture to production deployment."
     >
-      <div className="grid gap-5 md:grid-cols-2">
+      {/* ── Mobile: swipeable horizontal carousel ── */}
+      <div className="md:hidden">
+        <div
+          ref={scrollRef}
+          onScroll={handleScroll}
+          className="flex gap-4 overflow-x-auto pb-4 scrollbar-none [&::-webkit-scrollbar]:hidden"
+          style={{ scrollSnapType: "x mandatory", WebkitOverflowScrolling: "touch" }}
+        >
+          {/* leading spacer so first card aligns with page padding */}
+          <div className="w-1 shrink-0" />
+          {projects.map((project, i) => (
+            <div
+              key={project.name}
+              className="w-[82vw] shrink-0 sm:w-[72vw]"
+              style={{ scrollSnapAlign: "center" }}
+            >
+              <ProjectCard project={project} index={i} />
+            </div>
+          ))}
+          {/* trailing spacer */}
+          <div className="w-1 shrink-0" />
+        </div>
+
+        {/* Dot indicators */}
+        <div className="mt-3 flex justify-center gap-1.5">
+          {projects.map((p, i) => (
+            <span
+              key={p.name}
+              className={`h-1.5 rounded-full transition-all duration-300 ${
+                i === activeIndex ? "w-4 bg-accent" : "w-1.5 bg-border"
+              }`}
+            />
+          ))}
+        </div>
+      </div>
+
+      {/* ── Tablet (md) & Large tablet (lg): 2-col grid ── */}
+      <div className="hidden gap-5 md:grid md:grid-cols-2 lg:hidden">
+        {projects.map((project, i) => (
+          <ProjectCard key={project.name} project={project} index={i} />
+        ))}
+      </div>
+
+      {/* ── Desktop (lg+): 3-col grid ── */}
+      <div className="hidden gap-5 lg:grid lg:grid-cols-3">
         {projects.map((project, i) => (
           <ProjectCard key={project.name} project={project} index={i} />
         ))}

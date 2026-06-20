@@ -5,7 +5,7 @@ import { content } from "@/lib/content";
 import "./globals.css";
 
 const { person } = content;
-const siteUrl = "https://rakibhossain.dev";
+const siteUrl = "https://dev-rakib-hossain.vercel.app/";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),

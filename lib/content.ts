@@ -136,6 +136,6 @@ export const content: SiteContent = {
   contact: {
     headline: "Open to work",
     text: "I'm looking for full-stack or backend-leaning roles, the kind where I can own the data layer and the API. If you've got something gnarly in Postgres, or a Next.js app that's quietly gotten slow, that's the work I'd take. Email is the fastest way to reach me.",
-    email: "rakibulhasanmd678@gamil.com",
+    email: "rakibulhasanmd678@gmail.com",
   },
 };

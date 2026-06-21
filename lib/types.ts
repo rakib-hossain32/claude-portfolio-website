@@ -6,7 +6,7 @@ export interface Project {
   description: string;
   image?: string;
   tech: string[];
-  highlights: string[];
+  
   links: { live?: string; github?: string };
   year: string;
   accent: Accent;

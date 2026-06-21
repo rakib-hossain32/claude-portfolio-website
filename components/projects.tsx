@@ -17,7 +17,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
       className="group flex h-full flex-col overflow-hidden rounded-2xl border border-border bg-surface/40 transition-all duration-300 hover:border-accent/30 hover:shadow-[0_8px_32px_rgba(77,124,15,0.09)]"
     >
       {/* Image */}
-      <div className="relative aspect-video w-full overflow-hidden bg-surface-2">
+      <div className="relative aspect-3/2 w-full overflow-hidden bg-surface-2">
         {project.image ? (
           <Image
             src={project.image}
@@ -71,7 +71,7 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
         </div>
 
         {/* Links — pushed to bottom */}
-        <div className="flex items-center gap-5 border-t border-border-soft pt-4 mt-4">
+        <div className="flex items-center gap-5 border-t border-border-soft pt-4 mt-auto">
           {project.links.live && (
             <a
               href={project.links.live}
@@ -129,7 +129,7 @@ export function Projects({ projects }: { projects: SiteContent["projects"] }) {
           {projects.map((project, i) => (
             <div
               key={project.name}
-              className="w-[85vw] shrink-0 snap-center snap-always sm:w-[70vw]"
+              className="w-[85vw] shrink-0 snap-center snap-always sm:w-[70vw] flex flex-col"
             >
               <ProjectCard project={project} index={i} />
             </div>
@@ -150,14 +150,14 @@ export function Projects({ projects }: { projects: SiteContent["projects"] }) {
       </div>
 
       {/* ── Tablet (md) & Large tablet (lg): 2-col grid ── */}
-      <div className="hidden gap-5 md:grid md:grid-cols-2 lg:hidden">
+      <div className="hidden gap-5 md:grid md:grid-cols-2 lg:hidden items-stretch">
         {projects.map((project, i) => (
           <ProjectCard key={project.name} project={project} index={i} />
         ))}
       </div>
 
       {/* ── Desktop (lg+): 3-col grid ── */}
-      <div className="hidden gap-5 lg:grid lg:grid-cols-3">
+      <div className="hidden gap-5 lg:grid lg:grid-cols-3 items-stretch">
         {projects.map((project, i) => (
           <ProjectCard key={project.name} project={project} index={i} />
         ))}

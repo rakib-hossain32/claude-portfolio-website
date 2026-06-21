@@ -22,7 +22,7 @@ export const content: SiteContent = {
     paragraphs: [
       "I am a Full-Stack Developer with hands-on professional experience building modern, production-ready web applications. I work across the entire stack — from designing responsive React UIs to building robust REST APIs with Node.js and Express, backed by both SQL and NoSQL databases.",
       "My backend experience includes working with PostgreSQL via Prisma, as well as MongoDB with Mongoose. I am comfortable designing schemas, writing efficient queries, and structuring APIs that are clean and maintainable.",
-      "I am actively looking for opportunities where I can grow as an engineer, take on greater responsibility, and contribute to a team building meaningful products."
+      "I am actively looking for opportunities where I can grow as an engineer, take on greater responsibility, and contribute to a team building meaningful products.",
     ],
     highlights: [
       "4 months professional experience",
@@ -34,11 +34,30 @@ export const content: SiteContent = {
   skills: [
     {
       group: "Frontend",
-      items: ["React", "Next.js", "JavaScript", "TypeScript", "TanStack Query", "Tailwind CSS", "HTML & CSS", "Axios", "Shadcn/UI", "React Router", "Zod"],
+      items: [
+        "React",
+        "Next.js",
+        "JavaScript",
+        "TypeScript",
+        "TanStack Query",
+        "Tailwind CSS",
+        "HTML & CSS",
+        "Axios",
+        "Shadcn/UI",
+        "React Router",
+        "Zod",
+      ],
     },
     {
       group: "Backend",
-      items: ["Node.js", "Express.js", "REST APIs", "Prisma", "JWT", "Mongoose"],
+      items: [
+        "Node.js",
+        "Express.js",
+        "REST APIs",
+        "Prisma",
+        "JWT",
+        "Mongoose",
+      ],
     },
     {
       group: "Databases",
@@ -46,72 +65,141 @@ export const content: SiteContent = {
     },
     {
       group: "Tools & Deploy",
-      items: ["Git", "GitHub", "Vercel", "Postman", "GitHub Actions", "Firebase"],
+      items: [
+        "Git",
+        "GitHub",
+        "Vercel",
+        "Postman",
+        "GitHub Actions",
+        "Firebase",
+      ],
     },
   ],
 
   projects: [
     {
-      name: "Sift",
-      tagline: "Product analytics dashboard for small SaaS teams",
-      image: "https://img.magnific.com/free-psd/flat-design-creativity-template_23-2150471372.jpg?semt=ais_hybrid&w=740&q=80",
+      name: "ContestHub",
+      tagline:
+        "Creative contest platform for designers, developers, and writers",
+      image: "https://i.ibb.co.com/Nd1KwFCT/photo-4.png",
       description:
-        "Small teams kept wiring up half a dozen tools just to answer 'are people actually using this feature'. I built Sift as a single dashboard that ingests events and turns them into funnels and retention charts, so you don't need a data engineer to set it up.",
-      tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Redis", "Tailwind CSS"],
-      highlights: [
-        "Handles ~4M events/day with p95 ingest under 90ms",
-        "Cut dashboard query time from 2.1s to 240ms",
-        "Pre-computed rollups in Redis dropped Postgres read load by 60%",
+        "ContestHub is a modern contest management platform where creative professionals can discover competitions, register, submit their work, and track upcoming events. The platform features advanced filtering, countdown timers, user dashboards, secure authentication, and a seamless submission workflow wrapped in a premium glassmorphism UI.",
+      tech: [
+        "React",
+        "Vite",
+        "Tailwind CSS",
+        "Stripe",
+        "Firebase",
+        "React Router",
+        "MongoDB",
+        "Axios",
       ],
-      links: { live: "https://sift.rakibhossain.dev", github: "https://github.com/rakib-hossain32/sift" },
-      year: "2024",
-      accent: "teal",
+
+      links: {
+        live: "https://contest-hub-c7402.web.app/",
+        github: "https://github.com/rakib-hossain32/Contest-Hub",
+      },
+      year: "2025",
+      accent: "lime",
     },
     {
-      name: "Marginal",
-      tagline: "Real-time collaborative editor for review notes",
-      image: "https://img.magnific.com/free-psd/flat-design-creativity-template_23-2150471372.jpg?semt=ais_hybrid&w=740&q=80",
+      name: "GFC - Golden First Contracting",
+      tagline: "Digital platform for global freight and supply chain solutions",
+      image: "https://i.ibb.co.com/tpCM3Fff/photo-1.png",
       description:
-        "My team was leaving review feedback in three places and losing half of it. Marginal is a shared editor where comments anchor to a line and update live for everyone in the doc.",
-      tech: ["Next.js", "TypeScript", "Node.js", "WebSockets", "PostgreSQL", "Prisma"],
-      highlights: [
-        "Holds ~50 concurrent editors per doc with sub-120ms update propagation",
-        "Reconnect-and-merge logic recovers offline edits without dropping changes",
-        "Server memory per active doc kept under 40MB",
+        "GFC is a business-focused logistics platform designed to strengthen the digital presence of a global freight forwarding company. The website presents transportation, cargo, and supply chain services through a modern interface, helping potential clients quickly understand capabilities, explore solutions, and connect with the company.",
+
+      tech: [
+        "Next.js",
+        "MongoDB",
+        "Tailwind CSS",
+        "TypeScript",
+        "recharts",
+        "qrcode",
+        "nodemailer",
+        "react-phone-number-input"
       ],
-      links: { live: "https://marginal.rakibhossain.dev", github: "https://github.com/rakib-hossain32/marginal" },
-      year: "2024",
+      links: {
+        live: "https://www.gfcont.com/",
+        github: "https://github.com/rakib-hossain32/gfc",
+      },
+
+      year: "2025",
       accent: "emerald",
     },
     {
-      name: "Stallworth",
-      tagline: "Marketplace for secondhand camera gear",
-      image: "https://img.magnific.com/free-psd/flat-design-creativity-template_23-2150471372.jpg?semt=ais_hybrid&w=740&q=80",
+      name: "Movie Master Pro",
+      tagline: "Movie discovery and watchlist management platform",
+      image: "https://i.ibb.co.com/TBmfxXWB/photo-2.png",
       description:
-        "A friend who flips camera equipment was running everything through DMs and a notebook. I built Stallworth so sellers can list gear, buyers checkout through Stripe, and both sides get an actual order history.",
-      tech: ["Next.js", "TypeScript", "PostgreSQL", "Prisma", "Stripe", "Tailwind CSS"],
-      highlights: [
-        "Row-level locking on checkout fixed a double-sell race we hit in week one",
-        "Trimmed the listing page bundle from 310KB to 180KB, LCP went from 3.4s to 1.6s",
-        "Processed ~1,200 orders in the first six months with no failed payouts",
+        "Movie Master Pro is a modern movie exploration platform where users can discover trending films, browse detailed movie information, manage personalized watchlists, and explore movies by genre. The application provides a smooth and engaging experience with secure authentication, dynamic content management, and a responsive user interface.",
+      tech: [
+        "React",
+        "Firebase",
+        "Node.js",
+        "Express.js",
+        "MongoDB",
+        "Tailwind CSS",
+        "React Router",
       ],
-      links: { live: "https://stallworth.rakibhossain.dev", github: "https://github.com/rakib-hossain32/stallworth" },
-      year: "2023",
+
+      links: {
+        live: "https://movies-master-pro.web.app/",
+        github: "https://github.com/rakib-hossain32/Movie-Master-Pro",
+      },
+      year: "2025",
       accent: "cyan",
     },
     {
-      name: "Relay",
-      tagline: "Internal tool for managing background jobs and retries",
-      image: "https://img.magnific.com/free-psd/flat-design-creativity-template_23-2150471372.jpg?semt=ais_hybrid&w=740&q=80",
+      name: "Hotel Builder",
+      tagline: "No-code platform for building professional hotel websites",
+      image: "https://i.ibb.co.com/LDvs5s4s/photo-5.png",
       description:
-        "We had cron jobs scattered across three services and no easy way to see why one failed or to re-run it. Relay registers jobs, shows their run history, and lets you retry a failed run from the UI.",
-      tech: ["Next.js", "TypeScript", "Node.js", "PostgreSQL", "Redis", "BullMQ", "Docker"],
-      highlights: [
-        "Tracks ~80k job runs/week with searchable history going back 90 days",
-        "Replaced a 600-line bash cron setup; diagnosis time dropped to minutes",
-        "Idempotency keys on retries stopped duplicate side effects",
+        "Hotel Builder is a SaaS platform that enables hotel owners to create and manage professional websites for their properties without coding. Users can customize branding, showcase rooms and amenities, manage content, and launch a modern hotel website through an intuitive dashboard.",
+
+      tech: [
+        "Next.js",
+        "TypeScript",
+        "Node.js",
+        "PostgreSQL",
+        "Tailwind CSS",
+        "Express.js",
+        "REST API",
+        "JWT",
+        "Prisma",
+        "Bcrypt",
       ],
-      links: { live: "https://relay.rakibhossain.dev", github: "https://github.com/rakib-hossain32/relay" },
+      links: {
+        live: "https://hotel-builder-frontend.vercel.app/",
+        
+      },
+
+      year: "2026",
+      accent: "lime",
+    },
+    {
+      name: "Cha Wala",
+      tagline: "Modern tea store and e-commerce experience",
+      image: "https://i.ibb.co.com/CpCk89KL/photo-3.png",
+      description:
+        "Cha Wala is a modern tea shop platform that showcases premium tea collections through an elegant and user-friendly interface. Customers can explore products, learn about different tea varieties, and enjoy a seamless browsing experience with responsive design and engaging visual elements.",
+      tech: [
+        "html5-qrcode",
+        "Next.js",
+        "Tailwind CSS",
+        "TypeScript",
+        "MongoDB",
+        "Mongoose",
+        "html2pdf.js",
+        "qrcode.react",
+        "recharts"
+      ],
+
+      links: {
+        live: "https://cha-wala-bice.vercel.app/hero-gateway",
+        github: "https://github.com/rakib-hossain32/cha-wala",
+      },
+
       year: "2025",
       accent: "lime",
     },
